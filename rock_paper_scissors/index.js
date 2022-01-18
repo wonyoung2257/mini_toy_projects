@@ -23,7 +23,6 @@ const matchBtnHandler = (event) => {
     document.querySelector("#win-counter").innerHTML = ++winCounter;
     alert("이겼당");
   } else {
-    alert("졌당");
   }
   randomChanger = setInterval(() => {
     randomNumber = parseInt(Math.random() * 10) % 3;
