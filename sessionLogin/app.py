@@ -29,14 +29,14 @@ def index():
         user_found = records.find_one({"name": user})
         email_found = records.find_one({"email": email})
         if user_found:
-            message = 'There already is a user by that name'
-            return render_template('index.html', message=message)
+            message = '사용하는 이름입니디.'
+            return render_template('index.html.j2', message=message)
         if email_found:
-            message = 'This email already exists in database'
-            return render_template('index.html', message=message)
+            message = '이미 존재하는 이메일 입니다.'
+            return render_template('index.html.j2', message=message)
         if password1 != password2:
-            message = 'Passwords should match!'
-            return render_template('index.html', message=message)
+            message = '비밀번호가 일치하지 않습니다.'
+            return render_template('index.html.j2', message=message)
         else:
             #hash the password and encode it
             hashed = bcrypt.hashpw(password2.encode('utf-8'), bcrypt.gensalt())
@@ -49,8 +49,8 @@ def index():
             user_data = records.find_one({"email": email})
             new_email = user_data['email']
             #if registered redirect to logged in as the registered user
-            return render_template('logged_in.html', email=new_email)
-    return render_template('index.html')
+            return render_template('logged_in.html.j2', email=new_email)
+    return render_template('index.html.j2')
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
@@ -74,18 +74,18 @@ def login():
             else:
                 if "email" in session:
                     return redirect(url_for("logged_in"))
-                message = 'Wrong password'
-                return render_template('login.html', message=message)
+                message = '비밀번호 틀림!'
+                return render_template('login.html.j2', message=message)
         else:
-            message = 'Email not found'
-            return render_template('login.html', message=message)
-    return render_template('login.html', message=message)
+            message = '이메일을 찾을 수 없음'
+            return render_template('login.html.j2', message=message)
+    return render_template('login.html.j2', message=message)
 
 @app.route('/logged_in')
 def logged_in():
     if "email" in session:
         email = session["email"]
-        return render_template('logged_in.html', email=email)
+        return render_template('logged_in.html.j2', email=email)
     else:
         return redirect(url_for("login"))
 
@@ -93,9 +93,9 @@ def logged_in():
 def logout():
     if "email" in session:
         session.pop("email", None)
-        return render_template("signout.html")
+        return render_template("signout.html.j2")
     else:
-        return render_template('index.html')
+        return render_template('index.html.j2')
 
 
 if __name__ == "__main__":
