@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>CRUD-Main</title>
+    <style>
+      .wrap {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 200px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="write-form" class="wrap" type="submit">
+      <label for="title">제목: </label>
+      <input id="title" type="text" />
+      <label for="contents">글 내용:</label>
+      <textarea
+        id="contents"
+        rows="5"
+        cols="33"
+        placeholder="글 적어줭"
+      ></textarea>
+      <input type="submit" value="글 작성" />
+    </form>
+    <script src="../static/index.js"></script>
+  </body>
+</html>

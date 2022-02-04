@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>회원가입</title>
+    <style>
+      .wrap {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 200px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form id="singup-form" class="wrap" type="submit">
+        <h1>회원가입</h1>
+        <label for="id">ID: </label>
+        <input id="id" />
+        <label for="pw">PW: </label>
+        <input id="pw" />
+        <label for="pw2">PW 확인: </label>
+        <input id="pw2" />
+        <input id="singup-btn" type="submit" value="회원가입" />
+        <button onclick="location.href = '/'" type="button">뒤로가기</button>
+      </form>
+    </div>
+    <script src="../static/index.js"></script>
+  </body>
+</html>

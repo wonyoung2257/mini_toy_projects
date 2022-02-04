@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>메인</title>
+    <style>
+      .wrap {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        height: auto;
+      }
+      .btn {
+        width: 200px;
+      }
+      table,
+      tr,
+      td,
+      tbody {
+        border: 1px black solid;
+      }
+      .main-table {
+        width: 100%;
+      }
+      .borad {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="logout-btn" type="button">로그아웃</button>
+
+    <div class="borad">
+      <table class="main-table">
+        <thead>
+          <tr>
+            <th>NO.</th>
+            <th>제목</th>
+            <th>작성자</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{borad}}
+          <!-- {% for el in borads%}
+          <tr id="{{el._id}}" style="text-align: center">
+            <td>{{loop.index}}</td>
+            <td>
+              <a href="{{url_for('detail', id=el._id)}}">{{el.title}}</a>
+            </td>
+            <td>{{el.userID}}</td>
+            <input type="hidden" name="" value="{{el._id}}" />
+          </tr>
+          {% endfor %} -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="../static/index.js"></script>
+    <script>
+      const userID = localStorage.getItem("userID");
+      $("#head-id").text(userID);
+    </script>
+  </body>
+</html>

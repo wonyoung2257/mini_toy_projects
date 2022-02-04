@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>CRUD-Main</title>
+    <style>
+      .wrap {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 200px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form id="login-form" class="wrap" type="submit">
+        <h1>로그인</h1>
+        <label for="id">ID: </label>
+        <input type="text" id="id" />
+        <label for="pw">PW: </label>
+        <input type="password" id="pw" />
+        <input id="submit-btn" type="submit" value="로그인" />
+        <button onclick="window.location.href ='/singup'" type="button">
+          회원가입
+        </button>
+      </form>
+    </div>
+    <script src="../static/index.js"></script>
+  </body>
+</html>
