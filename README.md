@@ -18,7 +18,7 @@ ajax
 mongoDB
 
 
-# wev_login_CRUD
+# web_login_CRUD
 ## 설명
 JWT를 사용하여 로그인, flask와 mongoDB를 사용하여 게시판 CRUD 구현
 
