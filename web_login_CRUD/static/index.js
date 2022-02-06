@@ -62,6 +62,7 @@ $("#logout-btn").on("click", () => {
 
 $("#write-form").on("submit", (e) => {
   e.preventDefault();
+
   const title = $("#title").val().trim();
   const contents = $("#contents").val().trim();
   const id = localStorage.getItem("userID");
